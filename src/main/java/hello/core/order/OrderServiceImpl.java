@@ -22,6 +22,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
 
+        // 단일 책임 원칙이 잘 지켜짐
         Member member = memberRepository.findById(memberId);
         int discountPrice = discountPolicy.discount(member, itemPrice);
 

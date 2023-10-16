@@ -14,6 +14,7 @@ public class Order {
         this.discountPrice = discountPrice;
     }
 
+    // 할인된 가격 리턴
     public int calculatePrice() {
         return itemPrice - discountPrice;
     }
