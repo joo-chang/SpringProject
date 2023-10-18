@@ -18,6 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ApplicationContextSameBeanFindTest {
 
+    // 아래 정의한 SameBeanConfig 사용
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SameBeanConfig.class);
 
     @Test
