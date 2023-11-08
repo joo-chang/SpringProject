@@ -1,7 +1,10 @@
 package hello.core.member;
 
+import hello.core.study.Study;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 @Component
 public class MemberServiceImpl implements MemberService{
@@ -21,6 +24,26 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
+    }
+
+    @Override
+    public Optional<Member> findById(Long memberId) {
+        return Optional.empty();
+    }
+
+    @Override
+    public void validate(Long memberId) {
+
+    }
+
+    @Override
+    public void notify(Study newstudy) {
+
+    }
+
+    @Override
+    public void notify(Member member) {
+
     }
 
     // 테스트 용

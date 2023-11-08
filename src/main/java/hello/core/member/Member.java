@@ -4,8 +4,21 @@ public class Member {
 
     private Long id;
     private String name;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    private String email;
     private Grade grade;
 
+    public Member(){
+
+    }
     public Member(Long id, String name, Grade grade) {
         this.id = id;
         this.name = name;

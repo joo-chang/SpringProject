@@ -1,18 +1,20 @@
 package hello.core;
 
-import jdk.jfr.Enabled;
+import hello.core.study.Study;
+import hello.core.study.StudyStatus;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.EnabledOnJre;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.JRE;
 import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import java.time.Duration;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ExtendWith(MockitoExtension.class)
 class StudyTest {
 
     @Test
@@ -27,7 +29,7 @@ class StudyTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Study(-10));
 
         String message = exception.getMessage();
-        assertEquals(message, "Limit은 0보다 커야 한다.");
+        assertEquals(message, "limit은 0보다 커야 한다.");
 
         // assertTimeoutPreemptively -> 지정한 시간이 지나면 바로 종료
 //        assertTimeout(Duration.ofMillis(100), () -> {
